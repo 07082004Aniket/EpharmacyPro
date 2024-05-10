@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PharmEasy: Online Pharmacy and Medical Store in India</title>
     <link rel="icon" type="image/png" href="images/pharmeasyfavicon.png">
+    <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -15,7 +16,7 @@
     <div id="navbar">            
         <div id="upperNav">
             <div>
-            <img src="images/navbarimg.png" alt="pharmeasyimage">
+            <img  src="logo.png" alt="pharmeasyimage">
             <button id="NavPincode">
                 Select Pincode
                 <span class="material-symbols-outlined">
@@ -25,7 +26,6 @@
             <input type="search" placeholder="| Select medicines/Healthcare products">
             <button>
                 <span class="material-symbols-outlined">
-                    search
                 </span>
             </button>
             </div>
@@ -33,43 +33,21 @@
         <div id="lowerNav">
             <div id="scroll">
                 <div id="orderMedicinebtn">
-                    <p>Order Medicines</p> 
+                    <a style="color: white;" href="OrderMedicine/ordermedicine.html"><i class="fas fa-user"></i>Order Medicines</a></p> 
                     <div class="highlight"></div>
                 </div>
-                <div id="Health">Healthcare Products
+                <div id="Health">
+                    <a style="color: white;" href="healthcare.html"><i class="fas fa-user"></i>Healthcare Products</a></p> 
                     <div class="highlight"></div>
                 </div>
-                <div id="labtestb">Lab Tests
-                    <div class="highlight"></div>
-                </div>
-                <div id="Rtpcr">RTPCR
-                    <div class="highlight"></div>
-                </div>
+               
             </div>
-            <div>
-                <div id="offer">
-                    <img src="images/discount.png" alt="flaticon">
-                    Offers
-                </div>
-                <div id="login" class="loginlink">
-                    <img src="images/loginsignup.svg" alt="login/signup">
-                    <div id="switch">
-                    <p>Login/Signup</p>
-                    <div class="contents">
-                        <div>My Orders</div>
-                        <div>My Refills</div>
-                        <div>Medical Records</div>
-                        <div><a href="myprofile.html">Profile</a></div>
-                        <div><a href="wallet.html">Wallet</a></div>
-                        <div><a href="refer.html">Refer & Earn</a></div>
-                        <div>Notification</div>
-                        <div id="logout">Logout</div>
-                    </div>
-                    </div>
+            <div id="login">
+                <p style="color: white;"><a style="color: white;" href="login.html"><i class="fas fa-user"></i>Login / Signup</a></p> 
                 </div>
                 <div id="cart">
-                    <img src="images/cart.svg" alt="">
-                    <p>Cart</p>
+                    <img src="images/cart.svg" alt=""> <a style="color: white;" href="cart.html"><i class="fas fa-user"></i>Cart</a></p>
+                    
                 </div>
             </div>
         </div>
@@ -87,7 +65,7 @@
                     <img src="images/slideImg1.jpg" alt="">
                 </div>
                 <div class="slideImg">
-                    <img src="images/slideImg2.jpg" alt="">
+                    <img style="width: 1500px;height: 300px;" src="temp2.jpeg" alt="">
                 </div>
                 <div class="slideImg">
                     <img src="images/slideImg3.jpg" alt="">
@@ -104,7 +82,7 @@
         <div id="card">
             <div class="tophalf flex">
                 <div class="space cardtext">
-                    Order Medicines
+                   <p> Order Medicines</p><a></a>
                 </div>
                 <div class="resize">
                     <img src="images/medicines.png" alt="">
@@ -144,7 +122,7 @@
     </div>
     <div id="strip">
         <div class="borderred">
-            <img src="images/stripPic1.png" alt="">
+         
         </div>
         <div class="borderred">Save flat 5% extra on medicines & enjoy FREE delivery with PLUS membership</div>
         <div class="borderred">
@@ -363,23 +341,7 @@
 
         </div>
     </div>
-    <div id="dealsOfDay">
-        <div id="timerWithBackground">
-            <img src="images/dealsOfTheDay.svg" alt="">
-            <div class="font">Deals of the Day</div>
-            <div class="DodControls">
-                <div class="font">View All</div>
-                <div class="Dodleftarrow"><span class="material-symbols-outlined">
-                    arrow_back
-                    </span></div>
-                <div class="Dodrightarrow"><span class="material-symbols-outlined">
-                    arrow_forward
-                    </span></div>
-            </div>
-        </div>
-        <div id="dealsOfTheDayDisplay">
-              <div id="dealsOfTheDaySlider" class="font">
-        </div>
+  
     </div>
     <div id="healthArticles">
         <div><p>Health Articles</p>

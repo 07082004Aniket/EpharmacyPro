@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login/SignUp</title>
+<style>
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    position: relative; /* Added */
+}
+.logo {
+    position: absolute; /* Added */
+    top: 1px; /* Added */
+    left: 15px; /* Added */
+    width: 150px; /* Added */
+    height: 50px; /* Added */
+}
+h2 {
+    text-align: center;
+    background-color: #10847e;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:  #10847e;
+    color: #fff;
+    cursor: pointer;
+}
+.error {
+    color: red;
+    display: none;
+}
+.error.active {
+    display: inline-block;
+}
+</style>
+</head>
+<script>
+function validateForm() {
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    const fullNameError = document.getElementById('fullNameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+
+    let isValid = true;
+
+    // Reset error messages
+    fullNameError.textContent = '';
+    emailError.textContent = '';
+    phoneError.textContent = '';
+
+    // Full Name validation
+    if (fullName === '') {
+        fullNameError.textContent = 'Full Name is required.';
+        fullNameError.classList.add('active');
+        isValid = false;
+    } else {
+        fullNameError.classList.remove('active');
+    }
+
+    // Email validation
+    if (email === '') {
+        emailError.textContent = 'Email is required.';
+        emailError.classList.add('active');
+        isValid = false;
+    } else if (!isValidEmail(email)) {
+        emailError.textContent = 'Invalid email format.';
+        emailError.classList.add('active');
+        isValid = false;
+    } else {
+        emailError.classList.remove('active');
+    }
+
+    // Phone validation
+    if (phone === '') {
+        phoneError.textContent = 'Phone number is required.';
+        phoneError.classList.add('active');
+        isValid = false;
+    } else if (!isValidPhone(phone)) {
+        phoneError.textContent = 'Invalid phone number format.';
+        phoneError.classList.add('active');
+        isValid = false;
+    } else {
+        phoneError.classList.remove('active');
+    }
+
+    // Prevent form submission if not valid
+    if (!isValid) {
+        return false;
+    }
+}
+
+function isValidEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+function isValidPhone(phone) {
+    const re = /^\d{10}$/;
+    return re.test(phone);
+}
+</script>
+<body>
+<div class="container">
+    <img src="logo.png" alt="Logo" class="logo" > <!-- Added -->
+    <h2>Login/Signup</h2>
+    <form id="admissionForm" action="/submit" method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="fullName">Name Your ID:</label>
+            <input type="text" id="fullName" name="fullName">
+            <span id="fullNameError" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span id="emailError" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone">
+            <span id="phoneError" class="error"></span>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

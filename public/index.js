@@ -40,20 +40,6 @@ login.addEventListener("click",function(){
     window.location.href = "login.html";
     }
 })
-let labtest = document.querySelector("#labtestb");
-labtest.addEventListener("click",function(){
-    window.location.href = "Labtest.html";
-});
-
-let Rtpcr = document.querySelector("#Rtpcr");
-Rtpcr.addEventListener("click",function(){
-    window.location.href = "RTPCR.html";
-});
-
-let Healthcare = document.querySelector("#Health");
-Healthcare.addEventListener("click",function(){
-    window.location.href = "healthcare.html";
-});
 let orderMedicine = document.querySelector("#orderMedicinebtn");
 orderMedicine.addEventListener("click",function(){
     console.log("in");
